@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  margin-top: 10rem;
+  margin-top: 5rem;
   background-color: white;
   border-radius: 10px;
   padding: 1rem;
@@ -35,12 +35,16 @@ body {
 }
 
 #date {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
 }
 
 #day {
-  font-size: 2rem;
+  font-size: 3rem;
+}
+
+#month-year {
+  font-size: 1.2rem;
 }
 
 .tasks-left-details {
@@ -51,7 +55,37 @@ body {
 }
 
 #tasks-left {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   color: #fe2f1e;
+}
+
+.tasks-left-text {
+  font-size: 1.2rem;
+}
+
+.add-task {
+  margin: 2rem 0;
+}
+
+#add-task-form {
+  display: flex;
+  justify-content: center;
+}
+
+#add-task-input {
+  border: none;
+  border-bottom: 1px solid #102b3f;
+  outline: none;
+  font-size: 1.5rem;
+  color: #102b3f;
+  width: 100%;
+}
+.add-task-button {
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 2rem;
+  color: #102b3f;
+  cursor: pointer;
 }
