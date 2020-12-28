@@ -3,10 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>ToDo App</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <script src="./styles.css"></script>
+    <main class="container">
+      <section class="details">
+        <div class="date-details">
+          <div class="date-day-details">
+            <span id="date"></span>
+            <span id="day"></span>
+          </div>
+          <span id="month-year"></span>
+        </div>
+        <div class="tasks-left-details">
+          <span id="tasks-left">4</span>
+          <span id="tasks-left-text">tasks left</span>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
   </body>
 </html>
