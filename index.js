@@ -100,3 +100,12 @@ addTaskForm.addEventListener('submit', function (event) {
   //clear input
   addTaskInput.value = '';
 });
+
+//On clear all task button click
+clearAllTasksButton.addEventListener('click', function () {
+  while (tasksList.childElementCount) {
+    tasksList.children[tasksList.childElementCount - 1].remove();
+  }
+  tasksCount = 0;
+  tasksLeft.innerText = tasksCount;
+});
