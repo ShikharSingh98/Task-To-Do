@@ -34,9 +34,30 @@
       </section>
       <section class="add-task">
         <form id="add-task-form">
-          <input id="add-task-input" type="text" placeholder="Enter a task" />
+          <input id="add-task-input" type="text" placeholder="Write a task" />
           <button class="add-task-button fas fa-chevron-circle-right"></button>
         </form>
+      </section>
+      <section class="tasks-list-container">
+        <ul class="tasks-list">
+          <li class="task">
+            <div>
+              <input class="task-checkbox" type="checkbox" />
+              <span class="task-text task-completed"> Go to Gym </span>
+            </div>
+            <i class="task-delete fas fa-trash"></i>
+          </li>
+          <li class="task">
+            <div>
+              <input class="task-checkbox" type="checkbox" />
+              <span class="task-text"> Go for Walk </span>
+            </div>
+            <i class="task-delete fas fa-trash"></i>
+          </li>
+        </ul>
+      </section>
+      <section class="clear-all-tasks">
+        <button id="clear-all-tasks-button">Clear All Tasks</button>
       </section>
     </main>
     <script
