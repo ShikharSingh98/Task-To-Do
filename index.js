@@ -5,6 +5,7 @@ const addTaskForm = document.getElementById('add-task-form');
 const addTaskInput = document.getElementById('add-task-input');
 const tasksList = document.getElementById('tasks-list');
 const tasksLeft = document.getElementById('tasks-left');
+const clearAllTasksButton = document.getElementById('clear-all-tasks-button');
 
 let tasksCount = 0;
 
@@ -17,26 +18,45 @@ monthYear.textContent = moment().format('MMMM YYYY');
 // Set tasks left
 tasksLeft.innerText = tasksCount;
 
+//Increment Tasks Counter
+
+function incrementTasksCount() {
+  tasksCount = tasksCount + 1;
+  tasksLeft.innerText = tasksCount;
+}
+
+//Decrement Tasks Counter
+
+function decrementTasksCount() {
+  if (tasksCount > 0) {
+    tasksCount = tasksCount - 1;
+  }
+  tasksLeft.innerText = tasksCount;
+}
+
 //Delete Task
 
 function deleteTask(event) {
   const task = event.target.parentElement;
+  const checkbox = task.children[0].children[0];
+  //If the checkbox is not checked then only decrement count
+  if (!checkbox.checked) {
+    decrementTasksCount();
+  }
   task.remove();
-
-  //Decrement Tasks Count
-  tasksCount = tasksCount - 1;
-  tasksLeft.innerText = tasksCount;
 }
 
 // Task Status : Completed or Not Completed
 
 function taskStatus(event) {
   const checkbox = event.target;
-  const span = checkbox.nextSibling;
+  const span = checkbox.nextElementSibling;
   if (checkbox.checked) {
     span.classList.add('task-completed');
+    decrementTasksCount();
   } else {
     span.classList.remove('task-completed');
+    incrementTasksCount();
   }
 }
 
@@ -76,9 +96,7 @@ addTaskForm.addEventListener('submit', function (event) {
   createTask(task);
 
   //Increment Tasks Count
-  tasksCount = tasksCount + 1;
-  tasksLeft.innerText = tasksCount;
-
+  incrementTasksCount();
   //clear input
   addTaskInput.value = '';
 });
