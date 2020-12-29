@@ -28,6 +28,18 @@ function deleteTask(event) {
   tasksLeft.innerText = tasksCount;
 }
 
+// Task Status : Completed or Not Completed
+
+function taskStatus(event) {
+  const checkbox = event.target;
+  const span = checkbox.nextSibling;
+  if (checkbox.checked) {
+    span.classList.add('task-completed');
+  } else {
+    span.classList.remove('task-completed');
+  }
+}
+
 // Create Task
 
 function createTask(task) {
@@ -39,6 +51,7 @@ function createTask(task) {
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
   checkbox.classList.add('task-checkbox');
+  checkbox.addEventListener('click', taskStatus);
 
   const span = document.createElement('span');
   span.classList.add('task-text');
