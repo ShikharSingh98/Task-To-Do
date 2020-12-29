@@ -90,7 +90,7 @@ body {
   cursor: pointer;
 }
 
-.tasks-list {
+#tasks-list {
   list-style: none;
   padding: 0;
 }
@@ -103,7 +103,7 @@ body {
 }
 
 .task-text {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-left: 2rem;
 }
 
