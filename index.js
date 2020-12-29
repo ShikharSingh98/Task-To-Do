@@ -17,6 +17,17 @@ monthYear.textContent = moment().format('MMMM YYYY');
 // Set tasks left
 tasksLeft.innerText = tasksCount;
 
+//Delete Task
+
+function deleteTask(event) {
+  const task = event.target.parentElement;
+  task.remove();
+
+  //Decrement Tasks Count
+  tasksCount = tasksCount - 1;
+  tasksLeft.innerText = tasksCount;
+}
+
 // Create Task
 
 function createTask(task) {
@@ -36,7 +47,8 @@ function createTask(task) {
   div.append(checkbox, span);
 
   const icon = document.createElement('i');
-  icon.classList.add('task-delete', 'fas', 'fa-trash');
+  icon.classList.add('task-delete-icon', 'fas', 'fa-trash');
+  icon.addEventListener('click', deleteTask);
 
   li.append(div, icon);
 
