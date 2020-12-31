@@ -12,16 +12,24 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   font-family: 'Nunito', sans-serif;
   color: #102b3f;
 }
 
+.heading {
+  color: white;
+  font-size: 3rem;
+}
+
 .container {
-  margin-top: 5rem;
+  margin-top: 2rem;
   background-color: white;
   border-radius: 10px;
   padding: 1rem;
+  min-width: 35%;
 }
 
 .details {
@@ -31,12 +39,17 @@ body {
 
 .date-details {
   border-right: 2px solid rgb(197, 197, 197);
-  padding-right: 2rem;
+  width: 60%;
 }
 
 #date {
   font-size: 5rem;
   font-weight: bold;
+  margin-right: 1rem;
+}
+
+.superscript {
+  font-size: 2rem;
 }
 
 #day {
@@ -51,7 +64,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 2rem;
+  width: 40%;
 }
 
 #tasks-left {

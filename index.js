@@ -7,8 +7,31 @@ const tasksList = document.getElementById('tasks-list');
 const tasksLeft = document.getElementById('tasks-left');
 const clearAllTasksButton = document.getElementById('clear-all-tasks-button');
 
+//create superscript
+const superscript = document.createElement('sup');
+superscript.classList.add('superscript');
+
+const dt = parseInt(moment().format('D'));
+if (dt >= 4 && dt <= 20) {
+  superscript.innerText = 'th';
+} else {
+  const rem = dt % 10;
+  switch (rem) {
+    case 1:
+      superscript.innerText = 'st';
+      break;
+    case 2:
+      superscript.innerText = 'nd';
+      break;
+    case 3:
+      superscript.innerText = 'rd';
+      break;
+    default:
+      superscript.innerText = 'th';
+  }
+}
 // Set date details
-date.textContent = moment().format('Do');
+date.append(moment().format('D'), superscript);
 day.textContent = moment().format('dddd');
 monthYear.textContent = moment().format('MMMM YYYY');
 
