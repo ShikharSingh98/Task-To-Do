@@ -2,7 +2,7 @@
 
 Web application that let user to keep the track of all the tasks that has to done.
 
-[Click To Visit]('https://taskstodoappbyshikharsingh.netlify.app/')
+[Click To Visit](https://taskstodoappbyshikharsingh.netlify.app/)
 
 ## Features
 
