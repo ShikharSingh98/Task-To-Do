@@ -147,7 +147,7 @@ function deleteTask(event) {
     decrementTasksCount();
   }
 
-  removeTaskFromLocal(task.dataset.taskId);
+  removeTaskFromLocal(parseInt(task.dataset.taskId));
   task.remove();
 }
 
@@ -156,7 +156,9 @@ function deleteTask(event) {
 function changeTaskStatus(event) {
   const checkbox = event.target;
   const span = checkbox.nextElementSibling;
-  const taskId = event.target.parentElement.parentElement.dataset.taskId;
+  const taskId = parseInt(
+    event.target.parentElement.parentElement.dataset.taskId
+  );
   if (checkbox.checked) {
     span.classList.add('task-completed');
     changeTaskStatusInLocal(taskId, true);
@@ -171,39 +173,13 @@ function changeTaskStatus(event) {
 // Create Task
 
 function createTask(task) {
-  const li = document.createElement('li');
-  li.classList.add('task');
-  li.dataset.taskId = Date.now();
-
-  const div = document.createElement('div');
-
-  const checkbox = document.createElement('input');
-  checkbox.setAttribute('type', 'checkbox');
-  checkbox.classList.add('task-checkbox');
-  checkbox.addEventListener('click', changeTaskStatus);
-
-  const span = document.createElement('span');
-  span.classList.add('task-text');
-  span.innerText = task;
-
-  div.append(checkbox, span);
-
-  const icon = document.createElement('i');
-  icon.classList.add('task-delete-icon', 'fas', 'fa-trash');
-  icon.addEventListener('click', deleteTask);
-
-  li.append(div, icon);
-
-  tasksList.append(li);
-
-  //Create Task Object To Save in Local Storage
-
   const taskObj = {
-    id: li.dataset.taskId,
+    id: Date.now(),
     task: task,
     completed: false,
   };
   saveTaskToLocal(taskObj);
+  renderTask(taskObj);
 }
 
 //On Content Load
