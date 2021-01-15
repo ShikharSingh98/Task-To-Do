@@ -154,3 +154,13 @@ body {
   cursor: pointer;
   font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  #date {
+    font-size: 3rem;
+  }
+
+  #day {
+    font-size: 2rem;
+  }
+}
